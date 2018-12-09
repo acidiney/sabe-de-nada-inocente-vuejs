@@ -1,17 +1,30 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!-- div id="app">
+    <img src="./assets/sabe.png" alt="monkey" width="400" />
+    <app-screen />
+  </div -->
+
+  <div>
+    <h2> Olá, <span>{{ greetings }} </span></h2>
+    <p> <small>@GDGDevFest 2018</small></p>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import AppScreen from "./components/AppScreen.vue";
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    "app-screen": AppScreen
+  },
+  created: function() {
+    document.title = "DevFest Example";
+  },
+  data: function() {
+    return {
+      greetings: "Acidiney Dias"
+    };
   }
 };
 </script>
@@ -22,7 +35,21 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #363636 !important;
+  padding: 5pc;
+}
+
+div {
+  padding: 5pc;
+  padding-top: 18%;
+  text-align: center;
+}
+h2 {
+  font-size: 48pt !important;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+span {
+  color: rgb(0, 128, 198);
 }
 </style>
